@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     body {
+      background: white;
       font-family: sans-serif;
       margin: 2.5rem;
     }
@@ -16,13 +17,13 @@
       #width: calc(100vw - 6em);
       height: auto;
       grid-gap: 3rem;
-      background-color: #fff;
       color: #444;
-      #padding: 2rem;
+      /* padding: 2rem; */
     }
     .box {
-      background-color: #444;
-      #background-color: #436e70;
+      /* background-color: #444; */
+      background-color: #2d333b;
+      /* background-color: #436e70; */
       color: #fff;
       border-radius: 5px;
       padding: 10px;
@@ -34,6 +35,7 @@
     }
 
     .searchBar {
+      transition: 0.2s;
       line-height: 46px;
       height: 46px;
       display: flex;
@@ -81,7 +83,7 @@
     }
     .card:hover {
       box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-      #background-color: #4d7e80;
+      /* background-color: #4d7e80; */
       background-color: #436e70;
     }
     .card:focus-within {
@@ -115,6 +117,26 @@
 
     .separator:not(:empty)::after {
       margin-left: .25em;
+    }
+
+    /* Dark Theme overrides */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #1c2128;
+      }
+      .searchTerm {
+        background-color: lightgrey;
+      }
+      .searchBar:focus-within {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+      }
+      .separator {
+        color: #FFF;
+      }
+      .separator::before,
+      .separator::after {
+        border-bottom: 1px solid #FFF;
+      }
     }
   </style>
 </head>
