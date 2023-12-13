@@ -20,6 +20,17 @@
       color: #444;
       /* padding: 2rem; */
     }
+    /* Adjust number of grid columns depending on screen size */
+    @media screen and (max-width: 900px) {
+      .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media screen and (max-width: 600px) {
+      .wrapper {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
     .box {
       /* background-color: #444; */
       background-color: #2d333b;
@@ -31,7 +42,9 @@
     }
     .center {
       margin: auto;
-      width: 50%;
+      width: calc(900px - 25rem);
+      min-width: 50vw;
+      max-width: 100%;
     }
 
     .searchBar {
